@@ -37,7 +37,7 @@ Please follow the next steps in order:
  6. Run the script `run_analysis.R`.
 
 ## Outputs
- * Tidy dataset file in long form [UCI_HAR_TIDY_DATASET.csv](https://github.com/MAHlimi/Getting-and-Cleaning-Data/blob/master/HAR_TIDY_DATASET.csv)
+ * Tidy dataset file in long form [UCI_HAR_TIDY_DATASET.csv](https://github.com/MAHlimi/Getting-and-Cleaning-Data/blob/master/UCI_HAR_TIDY_DATASET.csv)
  * Codebook file [CodeBook.md](https://github.com/MAHlimi/Getting-and-Cleaning-Data/blob/master/CodeBook.md)
 
 

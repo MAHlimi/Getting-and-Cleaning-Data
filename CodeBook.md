@@ -1,8 +1,15 @@
-# Codebook
+# Dataset Transformation
+ 1. Load the files into "R"
+ 2. Concatenate the training and the test sets
+ 3. Extract only the measurements on the mean and standard deviation
+ 4. Use descriptive activity names
+ 5. label the data set with descriptive variable names
+ 6. Create a tidy data set
 
-## Variable list and descriptions
+# Tidy Dataset Analysis
+## Variables Description
   
-Variable name    |Description
+Variable name    | Description
 -----------------|-------------------------------------------------------------------
 SubjectId.Id     | Identifier of the subject who carried out the experiment (1 to 30)
 Activity         | Activity label (LAYING, SITTING, ...)
@@ -12,7 +19,7 @@ Measurement      | Measured variable
 Mean.Average     | Average of the "Mean value" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
 SD.Average       | Average of the "Standard deviation" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
 
-## Dataset dimensions
+## Dataset Dimensions
   
   
   ```r
@@ -23,7 +30,18 @@ SD.Average       | Average of the "Standard deviation" variable by "Subject", "A
   ## [1] 5940    7
   ```
 
-## Dataset structure
+## Key Variables
+  
+  
+  ```r
+  key(dtTidy)
+  ```
+  
+  ```
+  ## [1] "Subject.Id"    "Activity"      "Signal.Domain" "Measurement"
+  ```
+
+## Dataset Structure
   
   
   ```r
@@ -43,64 +61,7 @@ SD.Average       | Average of the "Standard deviation" variable by "Subject", "A
   ##  - attr(*, ".internal.selfref")=<externalptr>
   ```
 
-## List the key variables in the data table
-  
-  
-  ```r
-  key(dtTidy)
-  ```
-  
-  ```
-  ## [1] "Subject.Id"    "Activity"      "Signal.Domain" "Measurement"
-  ```
-
-## Show a few rows of the dataset
-  
-  
-  ```r
-  dtTidy
-  ```
-  
-  ```
-  ##       Subject.Id         Activity Signal.Domain
-  ##    1:          1           LAYING          Freq
-  ##    2:          1           LAYING          Freq
-  ##    3:          1           LAYING          Freq
-  ##    4:          1           LAYING          Freq
-  ##    5:          1           LAYING          Freq
-  ##   ---                                          
-  ## 5936:         30 WALKING_UPSTAIRS          Time
-  ## 5937:         30 WALKING_UPSTAIRS          Time
-  ## 5938:         30 WALKING_UPSTAIRS          Time
-  ## 5939:         30 WALKING_UPSTAIRS          Time
-  ## 5940:         30 WALKING_UPSTAIRS          Time
-  ##                               Measurement #Measurements Mean.Average
-  ##    1:       Body Acceleration (Magnitude)            50  -0.86176765
-  ##    2:          Body Acceleration (X axis)            50  -0.93909905
-  ##    3:          Body Acceleration (Y axis)            50  -0.86706521
-  ##    4:          Body Acceleration (Z axis)            50  -0.88266688
-  ##    5:  Body Acceleration Jerk (Magnitude)            50  -0.93330036
-  ##   ---                                                               
-  ## 5936: Body Angular Velocity Jerk (Z axis)            65  -0.03641578
-  ## 5937:    Gravity Acceleration (Magnitude)            65  -0.13762786
-  ## 5938:       Gravity Acceleration (X axis)            65   0.93182983
-  ## 5939:       Gravity Acceleration (Y axis)            65  -0.22664729
-  ## 5940:       Gravity Acceleration (Z axis)            65  -0.02214011
-  ##       SD.Average
-  ##    1: -0.7983009
-  ##    2: -0.9244374
-  ##    3: -0.8336256
-  ##    4: -0.8128916
-  ##    5: -0.9218040
-  ##   ---           
-  ## 5936: -0.6651506
-  ## 5937: -0.3274108
-  ## 5938: -0.9540336
-  ## 5939: -0.9149339
-  ## 5940: -0.8624028
-  ```
-
-## Summary of variables
+## Variables Summary
   
   
   ```r
@@ -132,4 +93,28 @@ SD.Average       | Average of the "Standard deviation" variable by "Subject", "A
   ##  3rd Qu.:-0.01192   3rd Qu.:-0.3638  
   ##  Max.   : 0.97451   Max.   : 0.6871  
   ## 
+  ```
+
+## First six rows of the Dataset
+  
+  
+  ```r
+  head(dtTidy)
+  ```
+  
+  ```
+  ##    Subject.Id Activity Signal.Domain                        Measurement
+  ## 1:          1   LAYING          Freq      Body Acceleration (Magnitude)
+  ## 2:          1   LAYING          Freq         Body Acceleration (X axis)
+  ## 3:          1   LAYING          Freq         Body Acceleration (Y axis)
+  ## 4:          1   LAYING          Freq         Body Acceleration (Z axis)
+  ## 5:          1   LAYING          Freq Body Acceleration Jerk (Magnitude)
+  ## 6:          1   LAYING          Freq    Body Acceleration Jerk (X axis)
+  ##    #Measurements Mean.Average SD.Average
+  ## 1:            50   -0.8617676 -0.7983009
+  ## 2:            50   -0.9390991 -0.9244374
+  ## 3:            50   -0.8670652 -0.8336256
+  ## 4:            50   -0.8826669 -0.8128916
+  ## 5:            50   -0.9333004 -0.9218040
+  ## 6:            50   -0.9570739 -0.9641607
   ```
