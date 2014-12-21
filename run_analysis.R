@@ -2,7 +2,6 @@
 require(data.table)
 require(reshape2)
 require(knitr)
-require(markdown)
 
 setwd("~/R/Project/")
 path <- file.path(getwd(), "UCI HAR Dataset")
@@ -144,10 +143,9 @@ setkey(dtDataMelt, Subject.Id, Activity, Signal.Domain, Measurement)
 dtTidy <- dtDataMelt[, list("#Measurements"=.N, "Mean.Average"=mean(Mean),
                             "SD.Average"=mean(SD)), by=key(dtDataMelt)]
 
-write.table(dtTidy, "HAR_TIDY_DATASET.txt", sep=",", quote=FALSE, row.names=FALSE)
+write.table(dtTidy, "UCI_HAR_TIDY_DATASET.csv", sep=",", quote=FALSE, row.names=FALSE)
 
 # ====================================================================================
 #
 # ====================================================================================
 knit("CodeBook.Rmd", output="CodeBook.md", encoding="ISO8859-1", quiet=TRUE)
-markdownToHTML("CodeBook.md", "CodeBook.html")

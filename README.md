@@ -1,7 +1,7 @@
 ## Getting and Cleaning Data - Course Project
-Repository for the Course Project for Getting and Cleaning Data on Coursera.
+Project for **Getting and Cleaning Data** course on [Coursera](https://www.coursera.org).
 
-More details about the course are available [here](https://www.coursera.org/course/getdata)
+More details about the course available [here](https://www.coursera.org/course/getdata).
 
 ## Project Context
 One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/).
@@ -20,26 +20,25 @@ You will be required to submit:
 
 You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.
 
-You should create one R script called run_analysis.R that does the following. 
+You should create one R script called `run_analysis.R` that does the following. 
  1. Merges the training and the test sets to create one data set.
  2. Extracts only the measurements on the mean and standard deviation for each measurement.
  3. Uses descriptive activity names to name the activities in the data set.
  4. Appropriately labels the data set with descriptive activity names.
  5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-
 ## Getting started
 Please follow the next steps in order:
  1. Create a new folder, for consiceness, we will call it "WD" (Working Directory)
- 2. Download the dataset [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and place it in the "WD" folder
+ 2. Download the dataset [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and place it in the "WD"
  3. Unzip the zip file, this step will produce a folder named "UCI HAR Dataset"
- 4. Put the R script `run_analysis.R` in the "WD" folder
+ 4. Put the R script `run_analysis.R` in the "WD"
  5. Open `run_analysis.R` and replace the parameter of the `setwd` function by the full path to "WD"
  6. Run the script `run_analysis.R`.
 
-## Outputs produced
- * Tidy dataset file `HAR_TIDY_DATASET.txt` (coma-delimited text)
- * Codebook file `CodeBook.md` (Markdown)
+## Outputs
+ * Tidy dataset file in long form [UCI_HAR_TIDY_DATASET.csv](https://github.com/MAHlimi/Getting-and-Cleaning-Data/blob/master/HAR_TIDY_DATASET.csv)
+ * Codebook file [CodeBook.md](https://github.com/MAHlimi/Getting-and-Cleaning-Data/blob/master/CodeBook.md)
 
 
 ## Licence

@@ -2,7 +2,7 @@
 
 ## Variable list and descriptions
   
-Variable name    | Description
+Variable name    |Description
 -----------------|-------------------------------------------------------------------
 SubjectId.Id     | Identifier of the subject who carried out the experiment (1 to 30)
 Activity         | Activity label (LAYING, SITTING, ...)
