@@ -32,7 +32,7 @@ Please follow the next steps in order:
  1. Create a new folder, for consiceness, we will call it "WD" (Working Directory)
  2. Download the dataset [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and place it in the "WD"
  3. Unzip the zip file, this step will produce a folder named "UCI HAR Dataset"
- 4. Put the R script `run_analysis.R` in the "WD"
+ 4. Put the scripts `run_analysis.R` and `CodeBook.Rmd` in the "WD"
  5. Open `run_analysis.R` and replace the parameter of the `setwd` function by the full path to "WD"
  6. Run the script `run_analysis.R`.
 
