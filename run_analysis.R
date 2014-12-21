@@ -65,7 +65,7 @@ setnames(dtFeatures, c("FeatureId", "Feature"))
 dtFeatures$FeatureId <- paste0("V", dtFeatures$FeatureId)
 
 # ====================================================================================
-#
+# Extract only the measurements on the mean and standard deviation
 # ====================================================================================
 setnames(dtData, c("Subject.Id", "Activity.Id", as.character(dtFeatures$Feature)))
 
@@ -79,7 +79,7 @@ remove(dtData)
 remove(dtFeatures)
 
 # ====================================================================================
-#
+# Use descriptive variable names
 # ====================================================================================
 colNames <- gsub("-mean\\(\\)", ""                      , as.character(dtFeatures.Mean$Feature))
 colNames <- gsub("BodyBody"   , "Body"                  , colNames) # Maybe an error in the features file
@@ -96,7 +96,7 @@ setnames(dtData.Mean, c("Subject.Id", "Activity.Id", colNames))
 setnames(dtData.SD,   c("Subject.Id", "Activity.Id", colNames))
 
 # ====================================================================================
-# Reshape data from short and wide to tall and narrow format
+# Reshape data from short and wide to long and narrow format
 # ====================================================================================
 dtDataMelt.Mean <- melt(dtData.Mean, c("Subject.Id", "Activity.Id"),
                         variable.name="Feature", value.name="Mean")
@@ -118,7 +118,7 @@ remove(dtDataMelt.SD)
 remove(dtDataMelt.Mean)
 
 # ====================================================================================
-#
+# Use descriptive activity names
 # ====================================================================================
 # Read descriptive activity names
 # -----------------------------------------------------------------
@@ -138,7 +138,7 @@ dtDataMelt$Measurement   <- factor(dtDataMelt$Measurement)
 setkey(dtDataMelt, Subject.Id, Activity, Signal.Domain, Measurement)
 
 # ====================================================================================
-#
+# Create a tidy data set (long form)
 # ====================================================================================
 dtTidy <- dtDataMelt[, list("#Measurements"=.N, "Mean.Average"=mean(Mean),
                             "SD.Average"=mean(SD)), by=key(dtDataMelt)]
@@ -146,6 +146,6 @@ dtTidy <- dtDataMelt[, list("#Measurements"=.N, "Mean.Average"=mean(Mean),
 write.table(dtTidy, "UCI_HAR_TIDY_DATASET.csv", sep=",", quote=FALSE, row.names=FALSE)
 
 # ====================================================================================
-#
+# Generate the CodeBook
 # ====================================================================================
 knit("CodeBook.Rmd", output="CodeBook.md", encoding="ISO8859-1", quiet=TRUE)
