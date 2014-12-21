@@ -1,7 +1,6 @@
-Codebook
-========
- Variable list and descriptions
-------------------------------
+# Codebook
+
+## Variable list and descriptions
   
 Variable name    | Description
 -----------------|-------------------------------------------------------------------
@@ -13,8 +12,7 @@ Measurement      | Measured variable
 Mean.Average     | Average of the "Mean value" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
 SD.Average       | Average of the "Standard deviation" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
 
-Dataset dimensions
------------------
+## Dataset dimensions
   
   
   ```r
@@ -25,8 +23,7 @@ Dataset dimensions
   ## [1] 5940    7
   ```
 
-Dataset structure
------------------
+## Dataset structure
   
   
   ```r
@@ -46,8 +43,7 @@ Dataset structure
   ##  - attr(*, ".internal.selfref")=<externalptr>
   ```
 
-List the key variables in the data table
-----------------------------------------
+## List the key variables in the data table
   
   
   ```r
@@ -58,8 +54,7 @@ List the key variables in the data table
   ## [1] "Subject.Id"    "Activity"      "Signal.Domain" "Measurement"
   ```
 
-Show a few rows of the dataset
-------------------------------
+## Show a few rows of the dataset
   
   
   ```r
@@ -105,8 +100,7 @@ Show a few rows of the dataset
   ## 5940: -0.8624028
   ```
 
-Summary of variables
---------------------
+## Summary of variables
   
   
   ```r

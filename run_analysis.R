@@ -144,7 +144,7 @@ setkey(dtDataMelt, Subject.Id, Activity, Signal.Domain, Measurement)
 dtTidy <- dtDataMelt[, list("#Measurements"=.N, "Mean.Average"=mean(Mean),
                             "SD.Average"=mean(SD)), by=key(dtDataMelt)]
 
-write.csv(dtTidy, "HAR_TIDY_DATASET.csv", quote=FALSE, row.names=FALSE)
+write.table(dtTidy, "HAR_TIDY_DATASET.txt", sep=",", quote=FALSE, row.names=FALSE)
 
 # ====================================================================================
 #
