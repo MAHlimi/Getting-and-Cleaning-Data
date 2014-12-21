@@ -1,0 +1,49 @@
+Codebook
+========
+ Variable list and descriptions
+------------------------------
+  
+Variable name    | Description
+-----------------|-------------------------------------------------------------------
+SubjectId.Id     | Identifier of the subject who carried out the experiment (1 to 30)
+Activity         | Activity label (LAYING, SITTING, ...)
+Signal.Domain    | Domain of the signal: Time or frequency (Time or Freq)
+Measurement      | Measured variable
+#Measurements    | Number of measurements used to compute the "Average"
+Mean.Average     | Average of the "Mean value" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
+SD.Average       | Average of the "Standard deviation" variable by "Subject", "Activity", "Signal.Domain" and "Measurment"
+
+Dataset dimensions
+-----------------
+  
+  ```{r}
+dim(dtTidy)
+```
+
+Dataset structure
+-----------------
+  
+  ```{r}
+str(dtTidy)
+```
+
+List the key variables in the data table
+----------------------------------------
+  
+  ```{r}
+key(dtTidy)
+```
+
+Show a few rows of the dataset
+------------------------------
+  
+  ```{r}
+dtTidy
+```
+
+Summary of variables
+--------------------
+  
+  ```{r}
+summary(dtTidy)
+```
